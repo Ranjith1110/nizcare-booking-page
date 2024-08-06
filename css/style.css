@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background-color: #e8f4fc;
+    /* overflow: hidden; */
+}
+
+a {
+    text-decoration: none;
+}
+
+.container-scroller {
+    position: relative;
+    display: flex;
+}
+
+/* Navbar Start */
+#main-nav {
+    position: fixed;
+    background-color: #fff;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.4);
+}
+
+#main-nav>div:first-child>a:first-child {
+    color: #000;
+    font-size: 22px;
+}
+
+#main-nav>div:last-child>a:first-child {
+    font-size: 18px;
+    font-weight: 400;
+    color: rgb(91, 91, 91);
+}
+
+#main-nav>div:last-child>a:last-child>div {
+    border: none;
+    padding: 6px 12px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: #D3D3D3;
+}
+
+
+/* Navbar End */
+
+/* Sidebar Start */
+#sidebar {
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 75px;
+    padding: 0.6rem;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+#sidebar>ul>li:not(:first-child) {
+    margin-top: 6px;
+}
+
+#sidebar>ul>li>a {
+    font-size: 18px;
+    color: rgb(91, 91, 91);
+    font-weight: 400;
+    border-radius: 8px;
+}
+
+#sidebar>ul>li>a:hover {
+    background-color: #229ea6;
+    color: #fff;
+    transition: 0.3s all ease;
+}
+
+.sidebar-hidden {
+    transform: translateX(-100%);
+}
+
+/* Sidebar End */
+
+/* Main Content Start */
+.main-content {
+    flex-grow: 1;
+    margin-left: 250px;
+    transition: margin-left 0.3s ease;
+    position: absolute;
+    top: 75px;
+    left: 10px;
+    width: 82%;
+    padding: 0px 20px 0px 10px;
+}
+
+.full-width {
+    position: absolute;
+    margin-left: 0;
+    width: 98%;
+}
+
+.main-content>div>div:first-child>div>div:last-child>form>button {
+    border: none;
+    padding: 10px 12px;
+    border-radius: 5px;
+}
+
+.main-content>div>div:first-child>div>div:last-child>form>button:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#full-form {
+    background-color: #fff;
+    padding: 30px 20px;
+    margin-left: 10px;
+    border-radius: 4px;
+}
+
+.form-tag {
+    position: relative;
+    top: 100px;
+}
+
+.niz-input>input {
+    padding: 8px 12px;
+    outline: none;
+}
+
+.niz-input>select {
+    padding: 8px 12px;
+    outline: none;
+}
+
+.care-input>button {
+    border: none;
+    padding: 10px 12px;
+    border-radius: 5px;
+}
+
+.care-input>button:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.search-in>div {
+    border: 1px solid #000;
+    padding: 10px 14px;
+}
+
+.search-in>div>input {
+    outline: none;
+    border: none;
+}
+
+.board h5 {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.board p {
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.board .people {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: start;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+tr {
+    border-bottom: 1px solid #eef0f3;
+}
+
+thead>tr>td {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 500;
+    background-color: #f9fafb;
+    text-align: start;
+    padding: 15px;
+}
+
+tbody>tr>td {
+    padding: 15px 10px;
+}
+
+#icons-style>a:first-child {
+    color: #229ea6;
+}
+
+#icons-style>a:nth-child(2) {
+    color: #FF0000;
+}
+
+#icons-style>a:last-child {
+    color: #999898;
+}
+
+/* Main Content End */
+
+/* Media Query Start*/
+
+@media screen and (max-width: 992px) {
+
+    #main-nav>div:last-child>a:first-child {
+        font-size: 16px;
+    }
+
+    .main-content {
+        top: 90px;
+    }
+
+    .board {
+        overflow-x: scroll;
+    }
+
+}
+
+@media screen and (max-width: 478px) {
+
+    #main-nav {
+        padding: 0;
+        margin: 0;
+    }
+
+    #main-nav>div:first-child>a:last-child {
+        margin: 0px 0px 30px 0px;
+        padding: 0px;
+        height: 6px;
+    }
+
+    #main-nav>div:last-child>a:first-child {
+        font-size: 10px;
+    }
+
+    #main-nav>div:last-child>a:last-child {
+        font-size: 12px;
+    }
+
+    .main-content {
+        top: 128px;
+    }
+
+}
+
+/* Media Query End */
