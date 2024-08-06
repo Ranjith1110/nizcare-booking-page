@@ -88,6 +88,7 @@ a {
 
 /* Sidebar End */
 
+/* Index Page Start */
 /* Main Content Start */
 .main-content {
     flex-grow: 1;
@@ -106,17 +107,20 @@ a {
     width: 98%;
 }
 
-.main-content>div>div:first-child>div>div:last-child>form>button {
+.main-content>div>div:first-child>div>div:last-child>a {
     border: none;
     padding: 10px 12px;
     border-radius: 5px;
 }
 
-.main-content>div>div:first-child>div>div:last-child>form>button:hover {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+.main-content>div>div:first-child>div>div:last-child>a:hover {
+    outline: none;
+    border-color: #005f6b;
+    box-shadow: 0 0 5px rgba(0, 123, 143, 0.5);
 }
 
-#full-form {
+#full-form,
+#booking-form {
     background-color: #fff;
     padding: 30px 20px;
     margin-left: 10px;
@@ -140,22 +144,14 @@ a {
 
 .care-input>button {
     border: none;
-    padding: 10px 12px;
+    padding: 6px 12px;
     border-radius: 5px;
 }
 
 .care-input>button:hover {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.search-in>div {
-    border: 1px solid #000;
-    padding: 10px 14px;
-}
-
-.search-in>div>input {
     outline: none;
-    border: none;
+    border-color: #005f6b;
+    box-shadow: 0 0 5px rgba(0, 123, 143, 0.5);
 }
 
 .board h5 {
@@ -209,6 +205,141 @@ tbody>tr>td {
 }
 
 /* Main Content End */
+/* Index Page End */
+
+/* Input Styles Start */
+
+.dob-label {
+    display: block;
+    font-weight: bold;
+    color: #229ea6;
+    margin-bottom: 5px;
+}
+
+.dob-input {
+    border: 1px solid #007b8f;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+    width: 200px;
+}
+
+.dob-input:focus {
+    outline: none;
+    border-color: #005f6b;
+    box-shadow: 0 0 5px rgba(0, 123, 143, 0.5);
+}
+
+
+.dropdown-label {
+    display: block;
+    font-weight: bold;
+    color: #229ea6;
+    margin-bottom: 5px;
+}
+
+.dropdown-input {
+    border: 1px solid #007b8f;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+    width: 350px;
+    appearance: none;
+    /* Remove default arrow */
+    background: url('data:image/svg+xml;utf8,<svg fill="%23000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 10px center;
+    background-size: 12px;
+    background-color: #fff;
+}
+
+.dropdown-input:focus {
+    outline: none;
+    border-color: #005f6b;
+    box-shadow: 0 0 5px rgba(0, 123, 143, 0.5);
+}
+
+.search-label {
+    display: block;
+    font-weight: bold;
+    color: #777;
+    margin-bottom: 5px;
+}
+
+.search-container {
+    position: relative;
+    width: 500px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 8px 8px 8px 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #005f6b;
+    box-shadow: 0 0 5px rgba(0, 123, 143, 0.5);
+}
+
+/* Newbooking page */
+form {
+    margin: 20px;
+}
+
+#booking-form label {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #229ea6; /* Adjust color as needed */
+}
+
+.styled-input {
+    width: 350px;
+    padding: 10px;
+    border: 1px solid #007b8f;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.styled-input:focus {
+    outline: none;
+    border-color: #005f75;
+    box-shadow: 0 0 5px rgba(0, 123, 143, 0.5);
+}
+/* Newbooking page */
+
+/* Input Styles End */
+
+/* Newbooking Page Start */
+
+#booking-form>div>form>div {
+    margin-left: 30px;
+}
+
+#corp {
+    margin-left: 30px;
+}
+
+#booking-form>div>form>div:nth-child(4)>a {
+    background-color: #ccc;
+    color: #fff;
+    border-radius: 4px;
+    padding: 6px 12px;
+}
+
+#booking-form>div>form>div:last-child>a {
+    background-color: #229ea6;
+    color: #fff;
+    border-radius: 4px;
+    padding: 10px 35px;
+}
+/* Newbooking Page End */
 
 /* Media Query Start*/
 
