@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NIZCARE BOOKING</title>
+    <title>NEW BOOKING</title>
     <link rel="icon" href="./images/wepage-log.jpg" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
@@ -14,7 +14,6 @@
 <body>
 
     <div class="container-scroller">
-
         <!-- Navbar start -->
         <nav id="main-nav" class="navbar col-lg-12 col-md-12 col-sm-12 p-lg-0 fixed-top d-flex">
             <div class="navbar-menu-wrapper d-flex align-items-center justify-content-between gap-4 mx-4 my-3">
@@ -78,140 +77,168 @@
                     <div class="row">
                         <div>
                             <h4>Choose</h4>
-                            <div class="d-flex gap-5 align-items-center mt-3">
+                            <div class="d-flex gap- align-items-center mt-3">
                                 <div class="d-flex gap-2 align-items-center">
-                                    <a href="#">
-                                        <input type="radio" name="choose">
-                                    </a>
-                                    <label>Apollo</label>
+                                    <a href="./newbooking.html">Self</a>
                                 </div>
 
                                 <div class="d-flex gap-2 align-items-center">
-                                    <a href="#">
-                                        <input type="radio" name="choose">
-                                    </a>
-                                    <label>AHCN</label>
+                                    <a href="#">Dependent</a>
                                 </div>
                             </div>
                         </div>
 
-                        <form>
-                            <div class="d-flex gap-4 align-items-center flex-wrap mt-4">
-                                <div>
-                                    <label for="first-name">First Name*</label>
-                                    <input type="text" placeholder="First-name" class="styled-input">
-                                </div>
-
-                                <div>
-                                    <label for="first-name">Last Name*</label>
-                                    <input type="text" placeholder="Last-name" class="styled-input">
-                                </div>
-
-                                <div>
-                                    <label for="first-name">Email*</label>
-                                    <input type="email" placeholder="Email" class="styled-input">
-                                </div>
-                            </div>
-
-                            <div class="d-flex gap-4 align-items-center flex-wrap mt-4">
-                                <div>
-                                    <label for="first-name">Mobile Number*</label>
-                                    <input type="number" placeholder="Mobile-number" class="styled-input">
-                                </div>
-
-                                <div>
-                                    <label for="first-name">Date of Birth</label>
-                                    <input type="date" placeholder="Mobile-number" class="styled-input"
-                                        value="2003-02-10">
-                                </div>
-
-                                <div class="d-flex gap-4 align-items-center flex-wrap>
-                                    <label>Gender</label>
-                                    <div class=" d-flex align-items-center gap-5">
-                                    <div class="mt-1">
-                                        <input type="radio" name="gender">
-                                        <label for="">Male</label>
+                        <div class="form-container">
+                            <form id="myForm">
+                                <div class="d-flex gap-4 align-items-center flex-wrap mt-4">
+                                    <div>
+                                        <label for="first-name">First Name*</label>
+                                        <input type="text" id="first-name" placeholder="First-name" class="styled-input">
                                     </div>
-                                    <div class="mt-1">
-                                        <input type="radio" name="gender">
-                                        <label for="">Female</label>
+                                    <div>
+                                        <label for="last-name">Last Name*</label>
+                                        <input type="text" id="last-name" placeholder="Last-name" class="styled-input">
                                     </div>
-                                    <div class="mt-1">
-                                        <input type="radio" name="gender">
-                                        <label for="">Other</label>
+                                    <div>
+                                        <label for="email">Email*</label>
+                                        <input type="email" id="email" placeholder="Email" class="styled-input">
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="d-flex gap-4 align-items-center flex-wrap mt-4">
-                                <div class="d-flex gap-4 align-items-center flex-wrap">
+                                <div class="d-flex gap-4 align-items-center flex-wrap mt-4">
+                                    <div>
+                                        <label for="mobile-number">Mobile Number*</label>
+                                        <input type="number" id="mobile-number" placeholder="Mobile-number" class="styled-input">
+                                    </div>
+                                    <div>
+                                        <label for="dob">Date of Birth</label>
+                                        <input type="date" id="dob" class="styled-input" value="2003-02-10">
+                                    </div>
+                                    <div class="d-flex gap-4 align-items-center flex-wrap">
+                                        <label>Gender :</label>
+                                        <div class="d-flex align-items-center gap-5">
+                                            <div class="mt-1">
+                                                <input type="radio" name="gender" value="male">
+                                                <label>Male</label>
+                                            </div>
+                                            <div class="mt-1">
+                                                <input type="radio" name="gender" value="female">
+                                                <label>Female</label>
+                                            </div>
+                                            <div class="mt-1">
+                                                <input type="radio" name="gender" value="other">
+                                                <label>Other</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex gap-4 align-items-center flex-wrap mt-4">
+                                    <div>
+                                        <label class="dropdown-label">Partner Name</label>
+                                        <select id="partner-name" name="partner-name" class="dropdown-input">
+                                            <option value="">Select Partner Name</option>
+                                            <option value="NIZCARE PRIVATE LIMITED">NIZCARE PRIVATE LIMITED</option>
+                                        </select>
+                                    </div>
                                     <div>
                                         <label class="dropdown-label">Corporate Name</label>
                                         <select id="corporate-name" name="corporate-name" class="dropdown-input">
-                                            <option>Select Corporate Name</option>
-                                            <option>NIZCARE PRIVATE LIMITED</option>
+                                            <option value="">Select Corporate Name</option>
                                         </select>
                                     </div>
-
                                     <div>
-                                        <label class="dropdown-label">Select Health Chech</label>
-                                        <select id="corporate-name" name="corporate-name" class="dropdown-input">
-                                            <option>Select Corporate Name</option>
-                                            <option>NIZCARE PRIVATE LIMITED</option>
+                                        <label class="dropdown-label">Select Package</label>
+                                        <select id="package" name="package" class="dropdown-input">
+                                            <option value="">Select Package</option>
                                         </select>
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="text-center mt-5 mb-4">
-                                <a href="#" type="submit">ADD</a>
-                            </div>
-
-                            <div id="corp" class="d-flex gap-4 align-items-center flex-wrap mt-4">
-                                <div>
-                                    <label for="corporate-name" class="dropdown-label">Select City Name</label>
-                                    <select id="corporate-json" name="corporate-name" class="dropdown-input">
-                                        <option value="">Select City Name</option>
-                                    </select>
+                                <div class="d-flex gap-4 align-items-center flex-wrap mt-4">
+                                    <div>
+                                        <label class="dropdown-label">Mode of Appointment</label>
+                                        <select id="contentSelector" onchange="switchContent()" name="collection-name" class="dropdown-input">
+                                            <option value="">Select Mode</option>
+                                            <option value="home">Home Collection</option>
+                                            <option value="center">Center Visit</option>
+                                        </select>
+                                    </div>
                                 </div>
-
-                                <div>
-                                    <label class="dropdown-label">Select Clinic Name</label>
-                                    <select id="corporate-name" name="corporate-name" class="dropdown-input">
-                                        <option>Select Clinic Name</option>
-                                        <option>NIZCARE PRIVATE LIMITED</option>
-                                    </select>
+                    
+                                <!-- Home collection start -->
+                                <div id="homeCollection" class="content">
+                                    <div class="d-flex gap-4 align-items-center flex-wrap mt-4">
+                                        <div class="center">
+                                            <label for="home-address">Enter Address</label>
+                                            <input type="text" id="home-address" placeholder="Fill-address" class="styled-input">
+                                        </div>
+                                        <div class="center">
+                                            <label class="dropdown-label">Select Clinic Name</label>
+                                            <select id="home-clinic-name" name="home-clinic-name" class="dropdown-input">
+                                                <option value="">Select Clinic Name</option>
+                                                <option value="NIZCARE PRIVATE LIMITED">NIZCARE PRIVATE LIMITED</option>
+                                            </select>
+                                        </div>
+                                        <div class="center">
+                                            <label for="home-date">Appointment Date</label>
+                                            <input type="date" id="home-date" placeholder="Appointment-Id" class="styled-input">
+                                        </div>
+                                    </div>
+                                    <div class="d-flex gap-4 align-items-center flex-wrap mt-4">
+                                        <div class="center">
+                                            <label for="home-time">Appointment Time</label>
+                                            <input type="time" id="home-time" placeholder="Mobile-number" class="styled-input">
+                                        </div>
+                                    </div>
+                                    <div class="text-center mt-4 center">
+                                        <a href="#" id="home-book" type="submit">Book</a>
+                                    </div>
                                 </div>
-
-                                <div>
-                                    <label for="first-name">Reference Appointment-Id</label>
-                                    <input type="number" placeholder="Appointment-Id" class="styled-input">
+                                <!-- Home collection end -->
+                    
+                                <!-- Center visit start -->
+                                <div id="centerVisit" class="content">
+                                    <div class="d-flex gap-4 align-items-center flex-wrap mt-4">
+                                        <div class="center">
+                                            <label for="center-city-name" class="dropdown-label">Select City Name</label>
+                                            <select id="center-city-name" name="center-city-name" class="dropdown-input">
+                                                <option value="">Select City Name</option>
+                                            </select>
+                                        </div>
+                                        <div class="center">
+                                            <label class="dropdown-label">Select Clinic Name</label>
+                                            <select id="center-clinic-name" name="center-clinic-name" class="dropdown-input">
+                                                <option value="">Select Clinic Name</option>
+                                                <option value="NIZCARE PRIVATE LIMITED">NIZCARE PRIVATE LIMITED</option>
+                                            </select>
+                                        </div>
+                                        <div class="center">
+                                            <label for="center-date">Appointment Date</label>
+                                            <input type="date" id="center-date" placeholder="Appointment-Id" class="styled-input">
+                                        </div>
+                                    </div>
+                                    <div class="d-flex gap-4 align-items-center flex-wrap mt-4">
+                                        <div class="center">
+                                            <label for="center-time">Appointment Time</label>
+                                            <input type="time" id="center-time" placeholder="Mobile-number" class="styled-input">
+                                        </div>
+                                    </div>
+                                    <div class="text-center mt-4 center">
+                                        <a href="#" id="center-book" type="submit">Book</a>
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div id="corp" class="d-flex gap-4 align-items-center flex-wrap mt-4">
-                                <div>
-                                    <label for="first-name">Appointment Date</label>
-                                    <input type="date" placeholder="Mobile-number" class="styled-input"
-                                        value="2003-02-10">
-                                </div>
-                            </div>
-
-                            <div class="text-center mt-4">
-                                <a href="#" type="submit">BOOK</a>
-                            </div>
-                        </form>
+                                <!-- Center visit end -->
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
 
         </div>
-    </div>
-    </div>
-    <!-- Maincontent end -->
+        <!-- Maincontent end -->
     </div>
 
-
+    <script>
+        
+    </script>
     <script src="./js/app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
