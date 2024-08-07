@@ -9,7 +9,7 @@
 body {
     font-family: "DM Sans", sans-serif;
     background-color: #e8f4fc;
-    /* overflow: hidden; */
+    overflow-x: hidden;
 }
 
 a {
@@ -154,6 +154,13 @@ a {
     box-shadow: 0 0 5px rgba(0, 123, 143, 0.5);
 }
 
+#search-btn {
+    background-color: #229ea6;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 5px;
+}
+
 .board h5 {
     font-size: 14px;
     font-weight: 600;
@@ -208,6 +215,16 @@ tbody>tr>td {
 /* Index Page End */
 
 /* Input Styles Start */
+#ind-from-date,
+#ind-to-date,
+#ind-corporate,
+#ind-status,
+#ind-date-option {
+    display: block;
+    color: red;
+    font-weight: 400;
+    margin-top: 5px;
+}
 
 .dob-label {
     display: block;
@@ -291,12 +308,21 @@ form {
     margin: 20px;
 }
 
+#booking-form>div>div>div>div>a {
+    color: #fff;
+    background-color: #229ea6;
+    padding: 6px 12px;
+    margin-left: 40px;
+    border-radius: 4px;
+}
+
 #booking-form label {
     display: block;
     font-size: 16px;
     font-weight: bold;
     margin-bottom: 8px;
-    color: #229ea6; /* Adjust color as needed */
+    color: #229ea6;
+    /* Adjust color as needed */
 }
 
 .styled-input {
@@ -312,6 +338,7 @@ form {
     border-color: #005f75;
     box-shadow: 0 0 5px rgba(0, 123, 143, 0.5);
 }
+
 /* Newbooking page */
 
 /* Input Styles End */
@@ -322,10 +349,6 @@ form {
     margin-left: 30px;
 }
 
-#corp {
-    margin-left: 30px;
-}
-
 #booking-form>div>form>div:nth-child(4)>a {
     background-color: #ccc;
     color: #fff;
@@ -333,12 +356,18 @@ form {
     padding: 6px 12px;
 }
 
-#booking-form>div>form>div:last-child>a {
+#homeCollection>div:nth-child(3)>a,
+#centerVisit>div:nth-child(3)>a {
     background-color: #229ea6;
     color: #fff;
     border-radius: 4px;
     padding: 10px 35px;
 }
+
+.content {
+    display: none;
+}
+
 /* Newbooking Page End */
 
 /* Media Query Start*/
