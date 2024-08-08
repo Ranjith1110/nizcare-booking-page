@@ -21,6 +21,31 @@ a {
     display: flex;
 }
 
+.care-input>button,
+#search-btn,
+#downloadExcel,
+#booking-form>div>div>div>div>a,
+#homeCollection>div:nth-child(2)>a,
+#centerVisit>div:nth-child(3)>a,
+#homeCollectionForm>div:nth-child(2)>a,
+#centerVisitForm>div:nth-child(3)>a {
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    background-color: #229ea6;
+    color: #fff;
+}
+
+.main-content>div>div:first-child>div>div:last-child>a:hover,
+#homeCollection>div:nth-child(2)>a:hover,
+#centerVisit>div:nth-child(3)>a:hover,
+#booking-form>div>div>div>div>a:hover,
+#search>a:hover,
+.downloadExcel>button:hover {
+    border-color: #005f6b;
+    box-shadow: 0 0 5px rgba(0, 123, 143, 0.5);
+}
+
 /* Navbar Start */
 #main-nav {
     position: fixed;
@@ -108,15 +133,10 @@ a {
 }
 
 .main-content>div>div:first-child>div>div:last-child>a {
-    border: none;
-    padding: 10px 12px;
+    padding: 6px 12px;
     border-radius: 5px;
-}
-
-.main-content>div>div:first-child>div>div:last-child>a:hover {
-    outline: none;
-    border-color: #005f6b;
-    box-shadow: 0 0 5px rgba(0, 123, 143, 0.5);
+    background-color: #229ea6;
+    color: #fff;
 }
 
 #full-form,
@@ -142,12 +162,6 @@ a {
     outline: none;
 }
 
-.care-input>button {
-    border: none;
-    padding: 6px 12px;
-    border-radius: 5px;
-}
-
 .care-input>button:hover {
     outline: none;
     border-color: #005f6b;
@@ -155,10 +169,7 @@ a {
 }
 
 #search-btn {
-    background-color: #229ea6;
     color: #fff;
-    padding: 6px 12px;
-    border-radius: 5px;
 }
 
 .board h5 {
@@ -278,7 +289,7 @@ tbody>tr>td {
 
 .search-label {
     display: block;
-    font-weight: bold;
+    font-weight: 500;
     color: #777;
     margin-bottom: 5px;
 }
@@ -309,17 +320,13 @@ form {
 }
 
 #booking-form>div>div>div>div>a {
-    color: #fff;
-    background-color: #229ea6;
-    padding: 6px 12px;
-    margin-left: 40px;
-    border-radius: 4px;
+    margin-left: 30px;
 }
 
 #booking-form label {
     display: block;
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 500;
     margin-bottom: 8px;
     color: #229ea6;
     /* Adjust color as needed */
@@ -339,32 +346,23 @@ form {
     box-shadow: 0 0 5px rgba(0, 123, 143, 0.5);
 }
 
-/* Newbooking page */
-
 /* Input Styles End */
 
 /* Newbooking Page Start */
-
 #booking-form>div>form>div {
     margin-left: 30px;
 }
 
-#booking-form>div>form>div:nth-child(4)>a {
-    background-color: #ccc;
-    color: #fff;
-    border-radius: 4px;
-    padding: 6px 12px;
-}
-
-#homeCollection>div:nth-child(3)>a,
-#centerVisit>div:nth-child(3)>a {
-    background-color: #229ea6;
-    color: #fff;
-    border-radius: 4px;
-    padding: 10px 35px;
+.self-form-container,
+.dependent-form-container {
+    display: none;
 }
 
 .content {
+    display: none;
+}
+
+.hidden-content {
     display: none;
 }
 
