@@ -1,7 +1,7 @@
 
 
 //   Index Page input field start
-document.getElementById('myForm').addEventListener('submit', function(event) {
+document.getElementById('myForm').addEventListener('submit', function (event) {
     let isValid = true;
     const fromDate = document.getElementById('from-date').value;
     const toDate = document.getElementById('to-date').value;
@@ -93,33 +93,47 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 //   Fetching data from json file end
 
-//   Mood of Apponitment start
-function switchContent() {
-    const selectElement = document.getElementById('contentSelector');
+//   Mood of Apponitment self and dependent start
+function selfContent() {
+    const selectElement = document.getElementById('selfSelector');
     const selectedContent = selectElement.value;
 
-    // Hide all content divs
     const contents = document.getElementsByClassName('content');
     for (let content of contents) {
         content.style.display = 'none';
     }
 
-    // Show the selected content div
-    if (selectedContent === 'home') {
+    if (selectedContent === 'self-home') {
         document.getElementById('homeCollection').style.display = 'block';
-    } else if (selectedContent === 'center') {
+    } else if (selectedContent === 'self-center') {
         document.getElementById('centerVisit').style.display = 'block';
     }
 }
-//   Mood of Apponitment end
+
+function dependentContent() {
+    const selectElement = document.getElementById('dependentSelector');
+    const selectedContent = selectElement.value;
+
+    const contents = document.getElementsByClassName('hidden-content');
+    for (let content of contents) {
+        content.style.display = 'none';
+    }
+
+    if (selectedContent === 'dependent-self') {
+        document.getElementById('homeCollectionForm').style.display = 'block';
+    } else if (selectedContent === 'dependent-center') {
+        document.getElementById('centerVisitForm').style.display = 'block';
+    }
+}
+//   Mood of Apponitment self and dependent start
 
 //   Data searching start
-document.getElementById('search-btn').addEventListener('click', function(event) {
+document.getElementById('search-btn').addEventListener('click', function (event) {
     event.preventDefault();
     const searchInput = document.getElementById('search').value.toLowerCase();
     const tableBody = document.getElementById('table-body');
     const rows = tableBody.getElementsByTagName('tr');
-    let dataFound = false;
+
 
     for (const row of rows) {
         const appointmentId = row.getElementsByClassName('people')[0].innerText.toLowerCase();
@@ -135,3 +149,29 @@ document.getElementById('search-btn').addEventListener('click', function(event) 
 });
 //   Data searching end
 
+//   Download by Excel format start
+function downloadExcel() {
+    var table = document.getElementById("table-body");
+    var rows = table.querySelectorAll("tr");
+
+    var data = [["Appointment Id", "Corporate Name", "Name", "Email id", "Mobile", "Action"]];
+
+    rows.forEach(function (row) {
+        var rowData = [];
+        var cells = row.querySelectorAll("td");
+
+        cells.forEach(function (cell) {
+            rowData.push(cell.innerText);
+        });
+
+        data.push(rowData);
+    });
+
+    var wb = XLSX.utils.book_new();
+    var ws = XLSX.utils.aoa_to_sheet(data);
+
+    XLSX.utils.book_append_sheet(wb, ws, "Appointments");
+
+    XLSX.writeFile(wb, "MyReport-Booking.xlsx");
+}
+//   Download by Excel format end
