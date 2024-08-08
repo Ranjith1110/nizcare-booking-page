@@ -77,23 +77,24 @@
                     <div class="row">
                         <div>
                             <h4>Choose</h4>
-                            <div class="d-flex gap- align-items-center mt-3">
+                            <div class="d-flex align-items-center mt-3">
                                 <div class="d-flex gap-2 align-items-center">
-                                    <a href="./newbooking.html">Self</a>
+                                    <a href="#" id="self-btn">Self</a>
                                 </div>
 
                                 <div class="d-flex gap-2 align-items-center">
-                                    <a href="#">Dependent</a>
+                                    <a href="#" id="dependent-btn">Dependent</a>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="form-container">
-                            <form id="myForm">
+                        <!-- For Self start -->
+                        <div class="self-form-container" id="self-form-container">
+                            <form id="selfForm">
                                 <div class="d-flex gap-4 align-items-center flex-wrap mt-4">
                                     <div>
                                         <label for="first-name">First Name*</label>
-                                        <input type="text" id="first-name" placeholder="First-name" class="styled-input">
+                                        <input type="text" id="first-name" placeholder="First-name"
+                                            class="styled-input">
                                     </div>
                                     <div>
                                         <label for="last-name">Last Name*</label>
@@ -107,14 +108,15 @@
                                 <div class="d-flex gap-4 align-items-center flex-wrap mt-4">
                                     <div>
                                         <label for="mobile-number">Mobile Number*</label>
-                                        <input type="number" id="mobile-number" placeholder="Mobile-number" class="styled-input">
+                                        <input type="number" id="mobile-number" placeholder="Mobile-number"
+                                            class="styled-input">
                                     </div>
                                     <div>
                                         <label for="dob">Date of Birth</label>
                                         <input type="date" id="dob" class="styled-input" value="2003-02-10">
                                     </div>
                                     <div class="d-flex gap-4 align-items-center flex-wrap">
-                                        <label>Gender :</label>
+                                        <label>Gender* :</label>
                                         <div class="d-flex align-items-center gap-5">
                                             <div class="mt-1">
                                                 <input type="radio" name="gender" value="male">
@@ -154,71 +156,86 @@
                                 </div>
                                 <div class="d-flex gap-4 align-items-center flex-wrap mt-4">
                                     <div>
-                                        <label class="dropdown-label">Mode of Appointment</label>
-                                        <select id="contentSelector" onchange="switchContent()" name="collection-name" class="dropdown-input">
+                                        <label class="dropdown-label">Mode of Appointment Self</label>
+                                        <select id="selfSelector" onchange="selfContent()" name="collection-name"
+                                            class="dropdown-input">
                                             <option value="">Select Mode</option>
-                                            <option value="home">Home Collection</option>
-                                            <option value="center">Center Visit</option>
+                                            <option value="self-home">Home Collection</option>
+                                            <option value="self-center">Center Visit</option>
                                         </select>
                                     </div>
                                 </div>
-                    
+
                                 <!-- Home collection start -->
                                 <div id="homeCollection" class="content">
                                     <div class="d-flex gap-4 align-items-center flex-wrap mt-4">
                                         <div class="center">
+                                            <label for="home-pincode">Enter Pincode</label>
+                                            <input type="number" id="home-pincode" placeholder="Enter-pincode"
+                                                class="styled-input">
+                                        </div>
+                                        <div class="center">
                                             <label for="home-address">Enter Address</label>
-                                            <input type="text" id="home-address" placeholder="Fill-address" class="styled-input">
+                                            <input type="text" id="home-address" placeholder="Enter-address"
+                                                class="styled-input">
                                         </div>
                                         <div class="center">
                                             <label class="dropdown-label">Select Clinic Name</label>
-                                            <select id="home-clinic-name" name="home-clinic-name" class="dropdown-input">
-                                                <option value="">Select Clinic Name</option>
-                                                <option value="NIZCARE PRIVATE LIMITED">NIZCARE PRIVATE LIMITED</option>
+                                            <select id="home-clinic-name" name="home-clinic-name"
+                                                class="dropdown-input">
+                                                <option>Select Clinic Name</option>
+                                                <option>Healthians</option>
+                                                <option>Redcliffe</option>
                                             </select>
                                         </div>
                                         <div class="center">
                                             <label for="home-date">Appointment Date</label>
-                                            <input type="date" id="home-date" placeholder="Appointment-Id" class="styled-input">
+                                            <input type="date" id="home-date" placeholder="Appointment-Id"
+                                                class="styled-input">
                                         </div>
-                                    </div>
-                                    <div class="d-flex gap-4 align-items-center flex-wrap mt-4">
                                         <div class="center">
                                             <label for="home-time">Appointment Time</label>
-                                            <input type="time" id="home-time" placeholder="Mobile-number" class="styled-input">
+                                            <input type="time" id="home-time" placeholder="Mobile-number"
+                                                class="styled-input">
                                         </div>
                                     </div>
+
                                     <div class="text-center mt-4 center">
                                         <a href="#" id="home-book" type="submit">Book</a>
                                     </div>
                                 </div>
                                 <!-- Home collection end -->
-                    
+
                                 <!-- Center visit start -->
                                 <div id="centerVisit" class="content">
                                     <div class="d-flex gap-4 align-items-center flex-wrap mt-4">
                                         <div class="center">
-                                            <label for="center-city-name" class="dropdown-label">Select City Name</label>
-                                            <select id="center-city-name" name="center-city-name" class="dropdown-input">
+                                            <label for="center-city-name" class="dropdown-label">Select City
+                                                Name</label>
+                                            <select id="center-city-name" name="center-city-name"
+                                                class="dropdown-input">
                                                 <option value="">Select City Name</option>
                                             </select>
                                         </div>
                                         <div class="center">
                                             <label class="dropdown-label">Select Clinic Name</label>
-                                            <select id="center-clinic-name" name="center-clinic-name" class="dropdown-input">
+                                            <select id="center-clinic-name" name="center-clinic-name"
+                                                class="dropdown-input">
                                                 <option value="">Select Clinic Name</option>
                                                 <option value="NIZCARE PRIVATE LIMITED">NIZCARE PRIVATE LIMITED</option>
                                             </select>
                                         </div>
                                         <div class="center">
                                             <label for="center-date">Appointment Date</label>
-                                            <input type="date" id="center-date" placeholder="Appointment-Id" class="styled-input">
+                                            <input type="date" id="center-date" placeholder="Appointment-Id"
+                                                class="styled-input">
                                         </div>
                                     </div>
                                     <div class="d-flex gap-4 align-items-center flex-wrap mt-4">
                                         <div class="center">
                                             <label for="center-time">Appointment Time</label>
-                                            <input type="time" id="center-time" placeholder="Mobile-number" class="styled-input">
+                                            <input type="time" id="center-time" placeholder="Mobile-number"
+                                                class="styled-input">
                                         </div>
                                     </div>
                                     <div class="text-center mt-4 center">
@@ -228,6 +245,158 @@
                                 <!-- Center visit end -->
                             </form>
                         </div>
+                        <!-- For Self end -->
+                        <!-- For Dependent start -->
+                        <div class="dependent-form-container" id="dependent-form-container">
+                            <form id="dependentForm">
+                                <div class="d-flex gap-4 align-items-center flex-wrap mt-4">
+                                    <div>
+                                        <label for="first-name">First Name*</label>
+                                        <input type="text" id="first-name" placeholder="First-name"
+                                            class="styled-input">
+                                    </div>
+                                    <div>
+                                        <label for="last-name">Last Name*</label>
+                                        <input type="text" id="last-name" placeholder="Last-name" class="styled-input">
+                                    </div>
+                                    <div>
+                                        <label for="email">Email*</label>
+                                        <input type="email" id="email" placeholder="Email" class="styled-input">
+                                    </div>
+                                </div>
+                                <div class="d-flex gap-4 align-items-center flex-wrap mt-4">
+                                    <div>
+                                        <label for="mobile-number">Mobile Number*</label>
+                                        <input type="number" id="mobile-number" placeholder="Mobile-number"
+                                            class="styled-input">
+                                    </div>
+                                    <div>
+                                        <label for="dob">Date of Birth</label>
+                                        <input type="date" id="dob" class="styled-input" value="2003-02-10">
+                                    </div>
+                                    <div class="d-flex gap-4 align-items-center flex-wrap">
+                                        <label>Gender* :</label>
+                                        <div class="d-flex align-items-center gap-5">
+                                            <div class="mt-1">
+                                                <input type="radio" name="gender" value="male">
+                                                <label>Male</label>
+                                            </div>
+                                            <div class="mt-1">
+                                                <input type="radio" name="gender" value="female">
+                                                <label>Female</label>
+                                            </div>
+                                            <div class="mt-1">
+                                                <input type="radio" name="gender" value="other">
+                                                <label>Other</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex gap-4 align-items-center flex-wrap mt-4">
+                                    <div>
+                                        <label class="dropdown-label">Partner Name</label>
+                                        <select id="partner-name" name="partner-name" class="dropdown-input">
+                                            <option value="">Select Partner Name</option>
+                                            <option value="NIZCARE PRIVATE LIMITED">NIZCARE PRIVATE LIMITED</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="dropdown-label">Corporate Name</label>
+                                        <select id="corporate-name" name="corporate-name" class="dropdown-input">
+                                            <option value="">Select Corporate Name</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="dropdown-label">Select Package</label>
+                                        <select id="package" name="package" class="dropdown-input">
+                                            <option value="">Select Package</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex gap-4 align-items-center flex-wrap mt-4">
+                                    <div>
+                                        <label class="dropdown-label">Mode of Appointment Dependent</label>
+                                        <select id="dependentSelector" onchange="dependentContent()"
+                                            name="collection-name" class="dropdown-input">
+                                            <option value="">Select Mode</option>
+                                            <option value="dependent-self">Home Collection</option>
+                                            <option value="dependent-center">Center Visit</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <!-- Home collection start -->
+                                <div id="homeCollectionForm" class="hidden-content">
+                                    <div class="d-flex gap-4 align-items-center flex-wrap mt-4">
+                                        <div>
+                                            <label for="homePincode">Enter Pincode</label>
+                                            <input type="number" id="homePincode" placeholder="Enter pincode"
+                                                class="styled-input">
+                                        </div>
+                                        <div>
+                                            <label for="homeAddress">Enter Address</label>
+                                            <input type="text" id="homeAddress" placeholder="Enter address"
+                                                class="styled-input">
+                                        </div>
+                                        <div>
+                                            <label class="dropdown-label">Select Clinic Name</label>
+                                            <select id="homeClinicName" class="dropdown-input">
+                                                <option>Select Clinic Name</option>
+                                                <option>Healthians</option>
+                                                <option>Redcliffe</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label for="homeAppointmentDate">Appointment Date</label>
+                                            <input type="date" id="homeAppointmentDate" class="styled-input">
+                                        </div>
+                                        <div>
+                                            <label for="homeAppointmentTime">Appointment Time</label>
+                                            <input type="time" id="homeAppointmentTime" class="styled-input">
+                                        </div>
+                                    </div>
+                                    <div class="text-center mt-4">
+                                        <a href="#" id="homeBook" type="submit">Pay and Book</a>
+                                    </div>
+                                </div>
+                                <!-- Home collection end -->
+
+                                <!-- Center visit start -->
+                                <div id="centerVisitForm" class="hidden-content">
+                                    <div class="d-flex gap-4 align-items-center flex-wrap mt-4">
+                                        <div>
+                                            <label for="centerCityName" class="dropdown-label">Select City Name</label>
+                                            <select id="centerCityName" class="dropdown-input">
+                                                <option value="">Select City Name</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label class="dropdown-label">Select Clinic Name</label>
+                                            <select id="centerClinicName" class="dropdown-input">
+                                                <option value="">Select Clinic Name</option>
+                                                <option value="NIZCARE PRIVATE LIMITED">NIZCARE PRIVATE LIMITED</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label for="centerAppointmentDate">Appointment Date</label>
+                                            <input type="date" id="centerAppointmentDate" class="styled-input">
+                                        </div>
+                                    </div>
+                                    <div class="d-flex gap-4 align-items-center flex-wrap mt-4">
+                                        <div>
+                                            <label for="centerAppointmentTime">Appointment Time</label>
+                                            <input type="time" id="centerAppointmentTime" class="styled-input">
+                                        </div>
+                                    </div>
+                                    <div class="text-center mt-4">
+                                        <a href="#" id="centerBook" type="submit">Pay and Book</a>
+                                    </div>
+                                </div>
+                                <!-- Center visit end -->
+                            </form>
+                        </div>
+                        <!-- For Dependent end -->
                     </div>
                 </div>
             </div>
@@ -237,7 +406,19 @@
     </div>
 
     <script>
-        
+        //   Toggle for Self and Dependent start
+        document.getElementById('self-btn').addEventListener('click', function (e) {
+            e.preventDefault();
+            document.getElementById('self-form-container').style.display = 'block';
+            document.getElementById('dependent-form-container').style.display = 'none';
+        });
+
+        document.getElementById('dependent-btn').addEventListener('click', function (e) {
+            e.preventDefault();
+            document.getElementById('self-form-container').style.display = 'none';
+            document.getElementById('dependent-form-container').style.display = 'block';
+        })
+        //   Toggle for Self and Dependent end
     </script>
     <script src="./js/app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
