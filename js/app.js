@@ -1,4 +1,11 @@
-
+//   Menubar function start
+document.getElementById('menu-toggle').addEventListener('click', function () {
+    var sidebar = document.getElementById('sidebar');
+    var mainContent = document.getElementById('main-content');
+    sidebar.classList.toggle('sidebar-hidden');
+    mainContent.classList.toggle('full-width');
+});
+//   Menubar function start
 
 //   Index Page input field start
 document.getElementById('myForm').addEventListener('submit', function (event) {
@@ -64,15 +71,6 @@ function clearForm() {
     document.getElementById('myForm').reset();
 }
 //   Index Page input field end
-
-//   Menubar function start
-document.getElementById('menu-toggle').addEventListener('click', function () {
-    var sidebar = document.getElementById('sidebar');
-    var mainContent = document.getElementById('main-content');
-    sidebar.classList.toggle('sidebar-hidden');
-    mainContent.classList.toggle('full-width');
-});
-//   Menubar function start
 
 //   Fetching data from json file start
 document.addEventListener('DOMContentLoaded', function () {
@@ -175,3 +173,6 @@ function downloadExcel() {
     XLSX.writeFile(wb, "MyReport-Booking.xlsx");
 }
 //   Download by Excel format end
+
+
+
