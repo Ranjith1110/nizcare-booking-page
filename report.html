@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REPORTS</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    <link rel="icon" href="./images/wepage-log.jpg" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <div class="container-scroller">
+
+        <!-- Navbar start -->
+        <nav id="main-nav" class="navbar col-lg-12 col-md-12 col-sm-12 p-lg-0 fixed-top d-flex">
+            <div class="navbar-menu-wrapper d-flex align-items-center justify-content-between gap-4 mx-4 my-3">
+                <a href="#">
+                    <i id="menu-toggle" class="fa-solid fa-bars"></i>
+                </a>
+                <a href="#">
+                    <img height="38px" src="./images/navbar/nizcare-logo.png" alt="logo" />
+                </a>
+            </div>
+
+            <div class="navbar-menu-wrapper d-flex align-items-center justify-content-between gap-2 mx-4 my-3">
+                <a href="#">
+                    <span>CHARANJITHA SINGH</span>
+                </a>
+                <a href="#">
+                    <div>H</div>
+                </a>
+            </div>
+        </nav>
+        <!-- Navbar end -->
+        <!-- Sidebar start -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+
+            <ul class="nav row">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <span class="menu-title">Bookings</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="./report.html">
+                        <i class="fa-solid fa-file-invoice"></i>
+                        <span class="menu-title">Reports</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="./escalation.html">
+                        <i class="fa-brands fa-mendeley"></i>
+                        <span class="menu-title">Escalation Matrix</span>
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+        <!-- Sidebar end -->
+        <!-- Maincontent start -->
+        <div class="main-content" id="main-content">
+            <div class="row">
+                <div class="my-3">
+                    <div>
+                        <h3 style="color: #fff; font-weight: 700;">Reports List</h3>
+                    </div>
+                </div>
+
+                <div id="full-form">
+                    <div class="form-container">
+                        <form id="myForm">
+                            <div class="niz-input d-flex gap-4 align-items-center flex-wrap">
+                                <div>
+                                    <label for="from-date" class="dob-label">From Date</label>
+                                    <input type="date" id="from-date" name="from-date" class="dob-input">
+                                    <span id="ind-from-date"></span>
+                                </div>
+                                <div>
+                                    <label for="to-date" class="dob-label">To Date</label>
+                                    <input type="date" id="to-date" name="to-date" class="dob-input">
+                                    <span id="ind-to-date"></span>
+                                </div>
+                                <div>
+                                    <label class="dropdown-label">Corporate Name</label>
+                                    <select id="corporate-name" name="corporate-name" class="dropdown-input">
+                                        <option value="">Select Corporate Name</option>
+                                        <option value="NIZCARE PRIVATE LIMITED">NIZCARE PRIVATE LIMITED</option>
+                                    </select>
+                                    <span id="ind-corporate"></span>
+                                </div>
+                                <div class="d-flex gap-4 align-items-center mt-4 report-btn">
+                                    <button type="button" onclick="clearForm()"
+                                        style="background-color: lightgray; color: #000;">CLEAR</button>
+                                    <button type="submit">FILTER</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="search-bar d-flex gap-4 align-items-center mt-4">
+                        <div class="search-container">
+                            <input type="text" id="search-input" name="search" class="search-input"
+                                placeholder="Search by Name or UHID">
+                        </div>
+                        <div class="search-button-container">
+                            <a href="#" id="search-button">CLICK FOR SEARCH</a>
+                        </div>
+                    </div>
+
+                    <div class="downloadExcel mt-4">
+                        <button type="submit">DOWNLOAD AS EXCEL</button>
+                    </div>
+
+                    <div class="report-board mt-4">
+                        <table width="100%">
+                            <thead>
+                                <tr>
+                                    <td>Patient Name</td>
+                                    <td>UHID</td>
+                                    <td>Visit_Id</td>
+                                    <td>Center Name</td>
+                                    <td>Mobile</td>
+                                    <td>Package Name</td>
+                                    <td>Bill Amount</td>
+                                    <td>Visit Date</td>
+                                    <td>Action</td>
+                                </tr>
+                            </thead>
+                            <tbody id="patient-table-body">
+                                <tr>
+                                    <td class="patient-name">
+                                        <p>Mr. Ranjith</p>
+                                    </td>
+                                    <td class="patient-uhid">
+                                        <p>CMAR.0000359658</p>
+                                    </td>
+                                    <td>
+                                        <p>CMAROPV846466</p>
+                                    </td>
+                                    <td>
+                                        <p>Marathahalli...</p>
+                                    </td>
+                                    <td>
+                                        <p>91+8951142315</p>
+                                    </td>
+                                    <td>
+                                        <p>NIZCARE ELIOR INDIA - HEALTH C...</p>
+                                    </td>
+                                    <td>
+                                        <p>700.0</p>
+                                    </td>
+                                    <td>
+                                        <p>2024-08-08 17:00</p>
+                                    </td>
+                                    <td>
+                                        <div class="action-links d-flex gap-3 align-items-center mb-3 mx-2">
+                                            <a href="#" style="color: #229ea6; font-weight: 600;">VIEW</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+                        <span class="mt-3" id="no-results-message" style="display: none;">No Data Found</span>
+                    </div>
+                </div>
+            </div>
+            <footer>
+                <div class="my-4 mx-3">
+                    <span style="color: #fff;"><span>Copyright Nizcare</span> © 2024</span>
+                </div>
+            </footer>
+        </div>
+        <!-- Maincontent end -->
+    </div>
+
+    <script>
+        document.getElementById("search-button").addEventListener("click", function (e) {
+            e.preventDefault();
+
+            const searchValue = document.getElementById("search-input").value.toLowerCase();
+            const tableBody = document.getElementById("patient-table-body");
+            const rows = tableBody.getElementsByTagName("tr");
+            let noDataFound = true;
+
+            for (let i = 0; i < rows.length; i++) {
+                const patientName = rows[i].getElementsByClassName("patient-name")[0].textContent.toLowerCase();
+                const uhid = rows[i].getElementsByClassName("patient-uhid")[0].textContent.toLowerCase();
+
+                if (patientName.includes(searchValue) || uhid.includes(searchValue)) {
+                    rows[i].style.display = "";
+                    noDataFound = false;
+                } else {
+                    rows[i].style.display = "none";
+                }
+            }
+
+            if (noDataFound) {
+                document.getElementById("no-results-message").style.display = "block";
+            } else {
+                document.getElementById("no-results-message").style.display = "none";
+            }
+        });
+        //   Download by Excel format start
+        document.querySelector('.downloadExcel button').addEventListener('click', function () {
+            var table = document.getElementById('patient-table-body');
+            var data = [];
+
+            // Add the headers (excluding the "Action" column)
+            data.push(["Patient Name", "UHID", "Visit_Id", "Center Name", "Mobile", "Package Name", "Bill Amount", "Visit Date"]);
+
+            // Iterate over the table rows and collect the data, skipping the "Action" column
+            for (var i = 0, row; row = table.rows[i]; i++) {
+                var rowData = [];
+                for (var j = 0; j < row.cells.length - 1; j++) { // Exclude the last column
+                    rowData.push(row.cells[j].innerText.trim());
+                }
+                data.push(rowData);
+            }
+
+            // Create a new workbook and add the data
+            var wb = XLSX.utils.book_new();
+            var ws = XLSX.utils.aoa_to_sheet(data);
+            XLSX.utils.book_append_sheet(wb, ws, "Patient Data");
+
+            // Export the data to Excel file
+            XLSX.writeFile(wb, 'Patient_Data.xlsx');
+        });
+        //   Download by Excel format end
+    </script>
+    <script src="./js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
