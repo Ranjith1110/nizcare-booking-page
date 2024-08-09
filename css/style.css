@@ -8,8 +8,8 @@
 
 body {
     font-family: "DM Sans", sans-serif;
-    background-color: #e8f4fc;
-    overflow-x: hidden;
+    background-color: #229ea6;
+    /* overflow-x: hidden; */
 }
 
 a {
@@ -28,7 +28,11 @@ a {
 #homeCollection>div:nth-child(2)>a,
 #centerVisit>div:nth-child(3)>a,
 #homeCollectionForm>div:nth-child(2)>a,
-#centerVisitForm>div:nth-child(3)>a {
+#centerVisitForm>div:nth-child(3)>a,
+.report-btn>button,
+.search-button-container>a,
+.downloadExcel>button,
+.escalation-btn>a {
     border: none;
     padding: 6px 12px;
     border-radius: 5px;
@@ -41,9 +45,15 @@ a {
 #centerVisit>div:nth-child(3)>a:hover,
 #booking-form>div>div>div>div>a:hover,
 #search>a:hover,
-.downloadExcel>button:hover {
+.downloadExcel>button:hover,
+.report-btn>button:hover,
+.search-button-container>a:hover {
     border-color: #005f6b;
     box-shadow: 0 0 5px rgba(0, 123, 143, 0.5);
+}
+
+footer>div>span>span {
+    font-weight: 800;
 }
 
 /* Navbar Start */
@@ -82,7 +92,7 @@ a {
     width: 250px;
     height: 100vh;
     position: fixed;
-    top: 75px;
+    top: 73px;
     padding: 0.6rem;
     overflow: hidden;
     background-color: #fff;
@@ -97,7 +107,7 @@ a {
 #sidebar>ul>li>a {
     font-size: 18px;
     color: rgb(91, 91, 91);
-    font-weight: 400;
+    font-weight: 600;
     border-radius: 8px;
 }
 
@@ -135,8 +145,9 @@ a {
 .main-content>div>div:first-child>div>div:last-child>a {
     padding: 6px 12px;
     border-radius: 5px;
-    background-color: #229ea6;
-    color: #fff;
+    background-color: #fff;
+    color: #229ea6;
+    font-weight: 800;
 }
 
 #full-form,
@@ -177,7 +188,8 @@ a {
     font-weight: 600;
 }
 
-.board p {
+.board p,
+.report-board p {
     font-size: 13px;
     font-weight: 400;
 }
@@ -207,7 +219,11 @@ thead>tr>td {
 }
 
 tbody>tr>td {
-    padding: 15px 10px;
+    padding: 15px 6px;
+}
+
+#icons-style>a {
+    font-size: 14px;
 }
 
 #icons-style>a:first-child {
@@ -381,6 +397,10 @@ form {
     }
 
     .board {
+        overflow-x: scroll;
+    }
+
+    .report-board {
         overflow-x: scroll;
     }
 
