@@ -126,23 +126,30 @@ function dependentContent() {
 //   Mood of Apponitment self and dependent start
 
 //   Data searching start
-document.getElementById('search-btn').addEventListener('click', function (event) {
-    event.preventDefault();
-    const searchInput = document.getElementById('search').value.toLowerCase();
-    const tableBody = document.getElementById('table-body');
-    const rows = tableBody.getElementsByTagName('tr');
+document.getElementById('search-btn').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent the default link behavior
+    let searchValue = document.getElementById('search').value.trim().toLowerCase();
+    let tableBody = document.getElementById('table-body');
+    let rows = tableBody.getElementsByTagName('tr');
+    let noDataFound = document.getElementById('no-data');
+    let found = false;
 
+    for (let i = 0; i < rows.length; i++) {
+        let appointmentId = rows[i].getElementsByTagName('td')[0].innerText.trim().toLowerCase();
+        let name = rows[i].getElementsByTagName('td')[2].innerText.trim().toLowerCase();
 
-    for (const row of rows) {
-        const appointmentId = row.getElementsByClassName('people')[0].innerText.toLowerCase();
-        const name = row.getElementsByClassName('active')[0].innerText.toLowerCase();
-
-        if (appointmentId.includes(searchInput) || name.includes(searchInput)) {
-            row.style.display = '';
-            dataFound = true;
+        if (appointmentId === searchValue || name === searchValue) {
+            rows[i].style.display = ''; // Show the row
+            found = true;
         } else {
-            row.style.display = 'none';
+            rows[i].style.display = 'none'; // Hide the row
         }
+    }
+
+    if (!found) {
+        noDataFound.style.display = 'block'; // Show "No Data Found"
+    } else {
+        noDataFound.style.display = 'none'; // Hide "No Data Found"
     }
 });
 //   Data searching end
