@@ -19,6 +19,7 @@ a {
 .container-scroller {
     position: relative;
     display: flex;
+    /* padding: 0px 10px 0px 0px; */
 }
 
 .care-input>button,
@@ -32,7 +33,8 @@ a {
 .report-btn>button,
 .search-button-container>a,
 .downloadExcel>button,
-.escalation-btn>a {
+.escalation-btn>a,
+#btn-esc>a {
     border: none;
     padding: 6px 12px;
     border-radius: 5px;
@@ -47,7 +49,9 @@ a {
 #search>a:hover,
 .downloadExcel>button:hover,
 .report-btn>button:hover,
-.search-button-container>a:hover {
+.search-button-container>a:hover,
+.escalation-btn>a:hover,
+#btn-esc>a:hover {
     border-color: #005f6b;
     box-shadow: 0 0 5px rgba(0, 123, 143, 0.5);
 }
@@ -153,9 +157,9 @@ footer>div>span>span {
 #full-form,
 #booking-form {
     background-color: #fff;
-    padding: 30px 20px;
     margin-left: 10px;
     border-radius: 4px;
+    padding: 20px 10px;
 }
 
 .form-tag {
@@ -283,6 +287,33 @@ tbody>tr>td {
     margin-bottom: 5px;
 }
 
+.dropdown-text-es {
+    border: 1px solid #007b8f;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+    width: 500px;
+    appearance: none;
+    outline: none;
+    background-size: 12px;
+    background-color: #fff;
+}
+
+.dropdown-input-es {
+    border: 1px solid #007b8f;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+    width: 500px;
+    appearance: none;
+    /* Remove default arrow */
+    background: url('data:image/svg+xml;utf8,<svg fill="%23000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 10px center;
+    background-size: 12px;
+    background-color: #fff;
+}
+
 .dropdown-input {
     border: 1px solid #007b8f;
     padding: 8px;
@@ -297,7 +328,9 @@ tbody>tr>td {
     background-color: #fff;
 }
 
-.dropdown-input:focus {
+.dropdown-input:focus,
+.dropdown-input-es:focus,
+.dropdown-text-es:focus {
     outline: none;
     border-color: #005f6b;
     box-shadow: 0 0 5px rgba(0, 123, 143, 0.5);
@@ -367,6 +400,7 @@ form {
 /* Newbooking Page Start */
 #booking-form>div>form>div {
     margin-left: 30px;
+
 }
 
 .self-form-container,
