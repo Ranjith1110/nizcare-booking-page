@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NIZCARE BOOKING</title>
+    <title>Escalation Matrix</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
     <link rel="icon" href="./images/wepage-log.jpg" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -74,24 +74,62 @@
         <div class="main-content" id="main-content">
             <div class="row">
                 <div class="my-3">
-                    <div>
+                    <h3 style="color: #fff; font-weight: 700;">Escalation Matrix</h3>
+                </div>
+
+                <div id="full-form">
+                    <div class="escalation mt-3 mb-5 text-center">
+                        <h6>Click the button to view Escalation Matrix.</h6>
+                        <div class="escalation-btn mt-4">
+                            <a href="D:/Nizcare/nizcare-booking-page/Patient_Data.xlsx"><i class="fa-solid fa-file"></i>
+                                VIEW</a>
+                        </div>
+                    </div>
+
+                    <div class="my-4 text-center">
                         <div>
-                            <h3  style="color: #fff; font-weight: 700;">Escalation Matrix</h3>
+                            <label style="color: #000; font-weight: 500;" class="dropdown-label mb-3">Let us know the
+                                Issue Type</label>
+                            <select name="issues" class="dropdown-input-es">
+                                <option>Select the Issue</option>
+                                <option>Users unable to sign in or register.</option>
+                                <option>Password reset issues.</option>
+                                <option>Difficulty in booking or rescheduling appointments.</option>
+                                <option>Calendar sync issues.</option>
+                                <option>Problems updating personal information or health records.</option>
+                                <option>Data not saving correctly.</option>
+                                <option>Payment gateway failures.</option>
+                                <option>Incorrect billing information or charges.</option>
+                                <option>Delayed or missing test reports.</option>
+                                <option>Problems downloading or viewing reports.</option>
+                                <option>Navigation difficulties.</option>
+                                <option>Poor responsiveness on desktop/tab devices.</option>
+                                <option>Users not receiving appointment reminders or alerts.</option>
+                                <option>Overlapping or incorrect notifications.</option>
+                                <option>Technical Errors</option>
+                                <option>Slow loading times or server errors.</option>
+                                <option>Customer Support Issues</option>
+                                <option>Difficulty in reaching support.</option>
+                                <option>Unresolved or delayed queries.</option>
+                            </select>
+                        </div>
+
+                        <div class="my-4">
+                            <label style="color: #000; font-weight: 500;" class="dropdown-label mb-3">What's the
+                                Issue</label>
+                            <textarea class="dropdown-text-es" cols="" rows="3"
+                                placeholder="Brief in Details"></textarea>
+                        </div>
+
+                        <div class="text-center" id="btn-esc">
+                            <a href="#" type="submit" class="">Submit</a>
                         </div>
                     </div>
                 </div>
 
-                <div id="full-form">
-                    <div class="escalation text-center my-5">
-                        <h6>Click the button to view Excel.</h6>
-                        <div class="escalation-btn mt-4">
-                            <a href="#"><i class="fa-solid fa-file"></i> VIEW EXCEL</a>
-                        </div>
-                    </div>
-                </div>
                 <footer>
                     <div class="my-4 mx-3">
-                        <span  style="color: #fff;"><span>Copyright Nizcare</span> © 2024</span>
+                        <span style="color: #fff;"><span>Copyright Nizcare</span> © 2024</span>
                     </div>
                 </footer>
             </div>
@@ -100,7 +138,9 @@
 
     </div>
 
+    <script>
 
+    </script>
     <script src="./js/app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
