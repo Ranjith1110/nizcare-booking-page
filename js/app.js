@@ -117,8 +117,9 @@ document.getElementById('search-btn').addEventListener('click', function(event) 
     for (let i = 0; i < rows.length; i++) {
         let appointmentId = rows[i].getElementsByTagName('td')[0].innerText.trim().toLowerCase();
         let name = rows[i].getElementsByTagName('td')[2].innerText.trim().toLowerCase();
+        let mobile = rows[i].getElementsByTagName('td')[4].innerText.trim().toLowerCase();
 
-        if (appointmentId === searchValue || name === searchValue) {
+        if (appointmentId === searchValue || name === searchValue || mobile === searchValue) {
             rows[i].style.display = ''; // Show the row
             found = true;
         } else {
