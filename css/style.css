@@ -34,7 +34,8 @@ a {
 .search-button-container>a,
 .downloadExcel>button,
 .escalation-btn>a,
-#btn-esc>a {
+#btn-esc>a,
+#btn-new-tic>a {
     border: none;
     padding: 6px 12px;
     border-radius: 5px;
@@ -51,7 +52,8 @@ a {
 .report-btn>button:hover,
 .search-button-container>a:hover,
 .escalation-btn>a:hover,
-#btn-esc>a:hover {
+#btn-esc>a:hover,
+#btn-new-tic>a:hover {
     border-color: #005f6b;
     box-shadow: 0 0 5px rgba(0, 123, 143, 0.5);
 }
@@ -198,13 +200,6 @@ footer>div>span>span {
     font-weight: 400;
 }
 
-.board .people {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    text-align: start;
-}
-
 table {
     border-collapse: collapse;
 }
@@ -287,7 +282,8 @@ tbody>tr>td {
     margin-bottom: 5px;
 }
 
-.dropdown-text-es {
+.dropdown-text-es,
+.dropdown-text-new {
     border: 1px solid #007b8f;
     padding: 8px;
     border-radius: 4px;
@@ -298,6 +294,10 @@ tbody>tr>td {
     outline: none;
     background-size: 12px;
     background-color: #fff;
+}
+
+.dropdown-text-new {
+    width: 700px;
 }
 
 .dropdown-input-es {
@@ -363,6 +363,12 @@ tbody>tr>td {
     box-shadow: 0 0 5px rgba(0, 123, 143, 0.5);
 }
 
+.file-upload>input {
+    border: 1px solid #007b8f;
+    padding: 8px;
+    border-radius: 4px;
+}
+
 /* Newbooking page */
 form {
     margin: 20px;
@@ -417,7 +423,18 @@ form {
 }
 
 /* Newbooking Page End */
+/* Newticket Page start */
 
+.ticket-back {
+    margin: 10px 0px 0px 5px;
+}
+
+.ticket-back>a {
+    font-size: 24px;
+    color: #fff;
+}
+
+/* Newticket Page end */
 /* Media Query Start*/
 
 @media screen and (max-width: 992px) {
