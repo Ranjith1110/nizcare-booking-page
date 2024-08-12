@@ -109,7 +109,7 @@
                     <div class="search-bar d-flex gap-4 align-items-center mt-4">
                         <div class="search-container">
                             <input type="text" id="search-input" name="search" class="search-input"
-                                placeholder="Search by Name or UHID">
+                                placeholder="Search by Mobile No or Name">
                         </div>
                         <div class="search-button-container">
                             <a href="#" id="search-button">CLICK FOR SEARCH</a>
@@ -150,7 +150,7 @@
                                         <p>Marathahalli...</p>
                                     </td>
                                     <td>
-                                        <p>91+8951142315</p>
+                                        <p>8951142315</p>
                                     </td>
                                     <td>
                                         <p>NIZCARE ELIOR INDIA - HEALTH C...</p>
@@ -162,8 +162,16 @@
                                         <p>2024-08-08 17:00</p>
                                     </td>
                                     <td>
-                                        <div class="action-links d-flex gap-3 align-items-center mb-3 mx-2">
-                                            <a href="#" style="color: #229ea6; font-weight: 600;">VIEW</a>
+                                        <div class="d-flex gap-3 mb-4">
+                                            <div>
+                                                <a href="#"
+                                                    style="color: #229ea6;font-size: 13px; font-weight: 600;">VIEW</a>
+                                            </div>
+                                            <div>
+                                                <a href="./newtickets.html"
+                                                    style="color: #229ea6;font-size: 13px; font-weight: 600;">RAISE
+                                                    TICKET</a>
+                                            </div>
                                         </div>
                                     </td>
                                 </tr>
@@ -182,7 +190,7 @@
                                         <p>Marathahalli...</p>
                                     </td>
                                     <td>
-                                        <p>91+8951142398</p>
+                                        <p>8951142398</p>
                                     </td>
                                     <td>
                                         <p>NIZCARE ELIOR INDIA - HEALTH C...</p>
@@ -194,8 +202,16 @@
                                         <p>2024-08-07 17:00</p>
                                     </td>
                                     <td>
-                                        <div class="action-links d-flex gap-3 align-items-center mb-3 mx-2">
-                                            <a href="#" style="color: #229ea6; font-weight: 600;">VIEW</a>
+                                        <div class="d-flex gap-3 mb-4">
+                                            <div>
+                                                <a href="#"
+                                                    style="color: #229ea6;font-size: 13px; font-weight: 600;">VIEW</a>
+                                            </div>
+                                            <div>
+                                                <a href="./newtickets.html"
+                                                    style="color: #229ea6;font-size: 13px; font-weight: 600;">RAISE
+                                                    TICKET</a>
+                                            </div>
                                         </div>
                                     </td>
                                 </tr>
@@ -228,8 +244,9 @@
             for (let i = 0; i < rows.length; i++) {
                 const patientName = rows[i].getElementsByClassName("patient-name")[0].textContent.toLowerCase();
                 const uhid = rows[i].getElementsByClassName("patient-uhid")[0].textContent.toLowerCase();
+                const mobile = rows[i].getElementsByTagName("td")[4].textContent.toLowerCase(); // Get the mobile number
 
-                if (patientName.includes(searchValue) || uhid.includes(searchValue)) {
+                if (patientName.includes(searchValue) || uhid.includes(searchValue) || mobile.includes(searchValue)) {
                     rows[i].style.display = "";
                     noDataFound = false;
                 } else {
@@ -243,6 +260,7 @@
                 document.getElementById("no-results-message").style.display = "none";
             }
         });
+
         //   Download by Excel format start
         document.querySelector('.downloadExcel button').addEventListener('click', function () {
             var table = document.getElementById('patient-table-body');
